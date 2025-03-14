@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Autoriser les requêtes du frontend Angular (ajuste selon ton domaine)
 CORS_ALLOWED_ORIGINS = [
-     "http://127.0.0.1:5500",  # Angular tourne sur ce port par défaut
+     "http://127.0.0.1:5500",  # javascript tourne sur ce port par défaut
 ]
