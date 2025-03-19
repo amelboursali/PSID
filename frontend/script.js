@@ -1,23 +1,26 @@
-fetch("http://127.0.0.1:8000/api/tasks/") // L'URL de ton API Django
-    .then(response => response.json()) // Convertir la réponse en JSON
-    .then(data => {
-        console.log("Bien connecté au backend :", data); // Vérifier dans la console
-        document.getElementById("content").innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-    })
-    .catch(error => console.error("Erreur lors de la récupération des données :", error));
+// Définition de l'URL de base de l'API Django
+const baseURL = "http://127.0.0.1:8000/api";
 
-// Fonction pour récupérer un message depuis l'API Django
-function fetchMessage(section) {
-    fetch(`http://127.0.0.1:8000/api/message/${section}/`)
-        .then(response => response.json())
-        .then(data => {
-            console.log("Message reçu du back:", data.message); // Vérifier dans la console
-            document.getElementById("content").innerHTML = `<h1>${data.message}</h1>`;
-        })
-        .catch(error => console.error("Erreur lors de la récupération du message :", error));
+// Récupérer un message spécifique depuis l'API Django
+async function fetchMessage(section) {
+    const contentElement = document.getElementById("content");
+    contentElement.innerHTML = `<p class="loading">Chargement...</p>`; // Affichage d'un message de chargement
+
+    try {
+        const response = await fetch(`${baseURL}/message/${section}/`);
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Message reçu du back:", data.message);
+        contentElement.innerHTML = `<h1>${data.message}</h1>`;
+    } catch (error) {
+        console.error("Erreur lors de la récupération du message :", error);
+        contentElement.innerHTML = `<p class="error">Erreur : impossible de charger cette section.</p>`;
+    }
 }
 
-// Fonction appelée lorsqu'on clique sur un menu
+// Fonction pour afficher une section via un appel à l'API
 function showSection(section) {
     fetchMessage(section);
 }

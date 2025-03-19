@@ -3,24 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Moderne</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Barre de navigation -->
+
+    <header>
+        <h1>Accueil</h1>
+    </header>
+
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection('accueil')">🏠 Accueil</a></li>
-            <li><a href="#" onclick="showSection('machinelearning')">🤖 Machine Learning</a></li>
-            <li><a href="#" onclick="showSection('graphe')">📊 Graphe</a></li>
+            <li><a href="index.html"> Accueil</a></li>
+            <li><a href="ml-model.html"> Modèle ML</a></li>
+            <li><a href="dashboard.html"> Dashboard</a></li>
         </ul>
     </nav>
 
-    <!-- Contenu dynamique -->
-    <section id="content">
-        <h1>Bienvenue sur mon site !</h1>
-        <p>Cliquez sur un menu pour voir le contenu.</p>
-    </section>
+    <div class="container">
+        <section id="content">
+            <h2>Bienvenue</h2>
+            <p>Bienvenue sur notre projet dédié à l'analyse des **accidents corporels de la circulation**. Explorez nos données et nos modèles prédictifs pour mieux comprendre et prévenir les risques.</p>
+        </section>
+
+        <section id="contexte">
+            <h2>Contexte</h2>
+            <p>Les accidents corporels de la circulation sont un problème majeur de sécurité routière. Chaque année, ils entraînent des blessures et des décès. L'analyse des données joue un rôle clé dans l'identification des tendances et la prévention des risques.</p>
+        </section>
+
+        <section id="objectif">
+            <h2>Objectifs</h2>
+            <ul>
+                <li>Collecter et nettoyer les données pour garantir leur qualité.</li>
+                <li>Analyser les facteurs de risque : météo, infrastructures, type de véhicule, etc.</li>
+                <li>Développer un modèle prédictif des zones et périodes à risque.</li>
+                <li>Proposer des recommandations pour réduire la gravité et la fréquence des accidents.</li>
+            </ul>
+        </section>
+
+        <section id="solution">
+            <h2>Solution</h2>
+            <p>Notre approche repose sur plusieurs étapes :</p>
+            <ol>
+                <li><strong>Exploration et préparation des données</strong> : Utilisation de bases publiques comme <a href="https://public.opendatasoft.com/explore/dataset/accidents-corporels-de-la-circulation-millesime/export/?flg=fr-fr">OpenDataSoft</a>.</li>
+                <li><strong>Analyse des données</strong> : Étude des tendances et des corrélations.</li>
+                <li><strong>Modélisation</strong> : Application du Machine Learning pour prédire les accidents.</li>
+                <li><strong>Recommandations</strong> : Propositions pour les acteurs de la sécurité routière.</li>
+            </ol>
+        </section>
+
+        <section id="donnees">
+            <h2>Données utilisées</h2>
+            <p>Les données proviennent de sources officielles et incluent :</p>
+            <ul>
+                <li>La localisation et la date des accidents.</li>
+                <li>Les conditions météorologiques au moment de l'accident.</li>
+                <li>Le type de véhicules impliqués.</li>
+                <li>Le nombre et la gravité des victimes.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Projet psid | Tous droits réservés
+    </footer>
+
 </body>
 </html>

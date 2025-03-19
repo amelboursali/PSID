@@ -1,18 +1,28 @@
-/* Styles de base */
+/* Styles généraux */
 body {
-    font-family: 'Arial', sans-serif;
-    background: black;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    background: #ECECEC; /* Fond gris clair doux */
+    color: #2D2D2D; /* Texte anthracite */
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* En-tête */
+header {
+    background: #E0E0E0; /* Gris clair */
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056B3; /* Bleu-gris pour un effet sobre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Barre de navigation */
 nav {
-    background: #222;
+    background: #E0E0E0; /* Gris clair */
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -29,26 +39,59 @@ nav ul li {
 }
 
 nav ul li a {
-    color: yellow;
+    color: #0056B3;
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     padding: 10px 15px;
-    transition: 0.3s;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    background: yellow;
-    color: black;
+    background: #0056B3;
+    color: #F0F0F0;
 }
 
-/* Contenu dynamique */
-section#content {
-    margin-top: 50px;
+/* Conteneur principal */
+.container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: left;
+}
+
+/* Sections */
+section {
+    background: #F0F0F0; /* Fond gris clair légèrement contrasté */
     padding: 20px;
-    background: rgba(255, 223, 0, 0.2);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.5);
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Titres */
+h2 {
+    font-size: 22px;
+    color: #0056B3;
+    border-bottom: 2px solid #0056B3;
     display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Paragraphes */
+p, ul, ol {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4A4A4A; /* Gris moyen pour une lecture agréable */
+}
+
+/* Footer */
+footer {
+    background: #E0E0E0; /* Fond légèrement plus foncé que le corps */
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666666;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
