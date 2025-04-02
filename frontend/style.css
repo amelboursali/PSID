@@ -1,97 +1,124 @@
-/* Styles généraux */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #ECECEC; /* Fond gris clair doux */
-    color: #2D2D2D; /* Texte anthracite */
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f6f8;
+  color: #2a2a2a;
+  line-height: 1.6;
 }
 
-/* En-tête */
+/* Header avec arrondis complets */
 header {
-    background: #E0E0E0; /* Gris clair */
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #0056B3; /* Bleu-gris pour un effet sobre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #218c74;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 30px;
+  margin: 20px auto 10px;
+  max-width: 1100px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Barre de navigation */
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navigation avec fond rond */
 nav {
-    background: #E0E0E0; /* Gris clair */
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 10px auto;
+  max-width: 1100px;
+  border-radius: 40px;
+  padding: 12px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 20px;
 }
 
 nav ul li a {
-    color: #0056B3;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: #218c74;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #f0f3f4;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #0056B3;
-    color: #F0F0F0;
+  background: #218c74;
+  color: white;
 }
 
-/* Conteneur principal */
+/* Container principal */
 .container {
-    width: 80%;
-    margin: 40px auto;
-    text-align: left;
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Sections */
-section {
-    background: #F0F0F0; /* Fond gris clair légèrement contrasté */
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+.intro {
+  background: white;
+  padding: 30px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 3px solid #218c74;
 }
 
-/* Titres */
-h2 {
-    font-size: 22px;
-    color: #0056B3;
-    border-bottom: 2px solid #0056B3;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+.intro-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  color: #218c74;
+  margin-bottom: 20px;
+  text-align: center;
+  
 }
 
-/* Paragraphes */
-p, ul, ol {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4A4A4A; /* Gris moyen pour une lecture agréable */
+.intro-text {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: justify;
+}
+
+/* Graph sections */
+.graph {
+  margin-bottom: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 /* Footer */
 footer {
-    background: #E0E0E0; /* Fond légèrement plus foncé que le corps */
-    padding: 15px;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #666666;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: #e8ecef;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+  border-radius: 30px;
+  max-width: 1100px;
+  margin: 60px auto 20px;
 }

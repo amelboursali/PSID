@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-    <header>
-        <h1>Dashboard</h1>
-    </header>
+  <header>
+    <h1>Tableau de bord : Données sur les accidents</h1>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html"> Accueil</a></li>
-            <li><a href="ml-model.html"> Modèle ML</a></li>
-            <li><a href="dashboard.html"> Dashboard</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="ml-model.html">Modèle ML</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <section id="content">
-            <h2>Visualisation des Données</h2>
-            <p>Explorez les graphiques et tendances extraites de nos analyses.</p>
-        </section>
-        <iframe src="graphs/accidents_par_heure.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/barplot_manoeuvre_gravite.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/accidents_par_manoeuvre.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/carte_accidents_par_departement.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/accidents_lum_meteo.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/dangerosite_communes.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/accidents_communes.html" width="100%" height="600" style="border: none;"></iframe>
-        <iframe src="graphs/evolution_dangerosite.html" width="100%" height="600" style="border: none;"></iframe>
-        
-    
-    
-    
-    </div>
+  <div class="container">
+    <section class="intro">
+        <h2 class="intro-title">Bienvenue sur notre tableau de bord des accidents de la circulation</h2>
+        <p class="intro-text">
+          Ce tableau de bord interactif présente une analyse approfondie des accidents corporels survenus sur les routes françaises, basée sur les données officielles collectées entre <strong>2008 et 2021</strong>.
+          L’objectif est d’explorer les facteurs influençant la fréquence et la gravité des accidents, ainsi que leur évolution dans le temps.
+        </p>
+        <p class="intro-text">
+          Grâce aux graphiques ci-dessous, vous pourrez visualiser :
+          les communes les plus accidentogènes, les manœuvres dangereuses, l’impact des conditions météo et de la luminosité, les zones géographiques à risque, ainsi que les évolutions annuelles.
+        </p>
+        <p class="intro-text">
+          Ces visualisations permettent de mieux comprendre les enjeux de la sécurité routière et d’orienter les actions de prévention.
+        </p>
+      </section>
+      
 
-    <footer>
-        © 2025 Projet Data Viz | Tous droits réservés
-    </footer>
+    <!-- Graphiques sans titres visuels (ils sont intégrés dans les iframes) -->
+    <section class="graph"><iframe src="graphs/accidents_par_heure.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/barplot_manoeuvre_gravite.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/accidents_par_manoeuvre.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/carte_accidents_par_departement.html" width="100%" height="700" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/accidents_lum_meteo.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/dangerosite_communes.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/accidents_communes.html" width="100%" height="600" style="border: none;"></iframe></section>
+    <section class="graph"><iframe src="graphs/evolution_dangerosite.html" width="100%" height="600" style="border: none;"></iframe></section>
+  </div>
+
+  <footer>
+    © 2025 Projet Data Viz | Tous droits réservés
+  </footer>
 
 </body>
 </html>
