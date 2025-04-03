@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Tableau de bord : Données sur les accidents</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="ml-model.html">Modèle ML</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="intro">
+        <h2 class="intro-title">Bienvenue sur notre tableau de bord des accidents de la circulation</h2>
+        <p class="intro-text">
+          Ce tableau de bord interactif présente une analyse approfondie des accidents corporels survenus sur les routes françaises, basée sur les données officielles collectées entre <strong>2008 et 2021</strong>.
+          L’objectif est d’explorer les facteurs influençant la fréquence et la gravité des accidents, ainsi que leur évolution dans le temps.
+        </p>
+        <p class="intro-text">
+          Grâce aux graphiques ci-dessous, vous pourrez visualiser :
+          les communes les plus accidentogènes, les manœuvres dangereuses, l’impact des conditions météo et de la luminosité, les zones géographiques à risque, ainsi que les évolutions annuelles.
+        </p>
+        <p class="intro-text">
+          Ces visualisations permettent de mieux comprendre les enjeux de la sécurité routière et d’orienter les actions de prévention.
+        </p>
+      </section>
+      
+
+
+
+
+
+
+
+
+      <div class="graph-analysis-section">
+        <h2 class="analysis-group-title" style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #218c74; margin-bottom: 30px; border-left: 6px solid #218c74; padding-left: 18px;">
+          Graphique montrant l’évolution du nombre d’accidents en fonction de l’heure et du jour </h2>
+      
+        <div class="graph-group">
+          <iframe src="graphs/accidents_par_heure.html" width="100%" height="600" style="border: none;"></iframe>
+        
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Accidents par heure selon le jour de la semaine</h3>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Introduction</h4>
+            <p>
+              Ce graphique met en lumière les fluctuations horaires des accidents de circulation, réparties selon les jours de la semaine. Il révèle l’impact direct des rythmes sociaux et professionnels sur l’accidentalité. L’analyse permet de cibler les moments critiques de la journée pour une meilleure prévention.
+            </p>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Jours ouvrés : des pics structurés</h4>
+            <p>
+              Du <strong>lundi au vendredi</strong>, deux <strong>pics marqués</strong> apparaissent :
+            </p>
+            <ul style="margin-top: 5px; padding-left: 25px;">
+              <li><strong>Matin (7h–9h)</strong> : trajets domicile-travail/école.</li>
+              <li><strong>Soir (16h–19h)</strong> : retours à domicile, souvent dans un trafic dense.</li>
+            </ul>
+            <p>
+              Ces pics témoignent de l’influence directe des mobilités quotidiennes sur les risques routiers.
+            </p>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Vendredi : un soir à haut risque</h4>
+            <p>
+              Le <strong>vendredi soir</strong> présente une accentuation notable du pic d’accidents, souvent liée :
+            </p>
+            <ul style="margin-top: 5px; padding-left: 25px;">
+              <li>Aux <strong>départs en week-end</strong>.</li>
+              <li>À la <strong>fatigue cumulative</strong> des conducteurs.</li>
+              <li>À une <strong>conduite moins vigilante</strong> en fin de semaine.</li>
+            </ul>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Samedi : un trafic diffus et constant</h4>
+            <p>
+              La journée du <strong>samedi</strong> montre une distribution plus régulière des accidents. L’absence de contraintes horaires fortes (pas de trajets domicile-travail) donne lieu à un trafic plus étalé, lié aux activités de loisir, de consommation ou de visite.
+            </p>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Dimanche : une journée plus calme, mais pas sans risque</h4>
+            <p>
+              Le <strong>dimanche</strong> est la journée la moins accidentogène :
+            </p>
+            <ul style="margin-top: 5px; padding-left: 25px;">
+              <li><strong>Matinée calme</strong> : trafic réduit.</li>
+              <li><strong>Fin d’après-midi</strong> : légère hausse liée aux retours de week-end.</li>
+            </ul>
+      
+            <h4 style="margin-top: 20px; color: #2c3e50;">Conclusion</h4>
+            <p>
+              Cette visualisation souligne l’influence des <strong>habitudes de déplacement</strong> sur l’accidentalité routière. Les <strong>heures de pointe</strong> des jours ouvrés, ainsi que certaines périodes clés (comme le vendredi soir ou le retour du dimanche) doivent faire l’objet d’une vigilance accrue. Ces données peuvent orienter :
+            </p>
+            <ul style="margin-top: 5px; padding-left: 25px;">
+              <li>Les campagnes de prévention ciblées,</li>
+              <li>Le renforcement des contrôles routiers,</li>
+              <li>Et l’ajustement des infrastructures à risque.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+      
+     <div class="graph-analysis-section">
+  <h2 class="analysis-group-title" style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #218c74; margin-bottom: 30px; border-left: 6px solid #218c74; padding-left: 18px;">
+    Lien entre manœuvre des véhicules et accident (manœuvre, gravité)
+  </h2>
+
+  <!-- Graphique 1 : barplot manoeuvre vs gravité -->
+  <div class="graph-group">
+    <iframe src="graphs/barplot_manoeuvre_gravite.html" width="100%" height="600" style="border: none;"></iframe>
+  
+    <div class="graph-comment">
+      <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Manœuvres accidentogènes par niveau de gravité</h3>
+
+      <h4>Introduction</h4>
+      <p>
+        Ce graphique met en évidence les manœuvres les plus souvent impliquées dans des accidents corporels, tout en précisant la gravité des issues pour les usagers. Il constitue un outil pertinent pour comprendre les comportements routiers les plus à risque et les contextes où la vigilance doit être renforcée.
+      </p>
+
+      <h4>Manœuvre dominante : sans changement de direction</h4>
+      <p>
+        La catégorie <strong>« sans changement de direction »</strong> concentre la majorité des accidents. Elle regroupe des situations apparemment banales comme les lignes droites ou les ralentissements, où les collisions arrière sont fréquentes. Ces cas traduisent souvent des erreurs d’attention, des vitesses inadaptées ou un non-respect des distances de sécurité.
+      </p>
+
+      <h4>Manœuvres dynamiques : changement de voie et tournants</h4>
+      <p>
+        Les accidents lors de <strong>changements de direction</strong>, notamment les <strong>tournants à gauche</strong>, figurent aussi parmi les plus accidentogènes. Ces actions demandent une coordination fine entre vitesse, observation et anticipation du trafic. Un mauvais angle de vue ou une estimation erronée de la distance peut suffire à provoquer un accident.
+      </p>
+      <p>
+        De même, les manœuvres dans le <strong>même sens</strong> de circulation, souvent liées aux dépassements ou aux insertions, représentent un danger sous-estimé, notamment en milieu urbain dense ou sur voies rapides.
+      </p>
+
+      <h4>Cas particuliers à ne pas négliger</h4>
+      <p>
+        Certaines manœuvres, bien que moins fréquentes, comme les <strong>arrêts hors stationnement</strong>, peuvent entraîner des accidents graves. Cela souligne l’importance de rester vigilant, même dans des situations perçues comme anodines. La surprise générée chez les autres usagers est souvent à l’origine de réactions tardives ou inappropriées.
+      </p>
+
+      <h4>Conclusion</h4>
+      <p>
+        Cette visualisation permet de dégager les <strong>manœuvres les plus critiques</strong> en matière de sécurité routière. Elle invite à un renforcement des campagnes d'information sur les risques liés à la conduite routinière, aux changements de voie, ou aux décisions soudaines dans la circulation. En ciblant les comportements associés à ces manœuvres, il est possible de réduire efficacement le nombre et la gravité des accidents.
+      </p>
+    </div>
+  </div>
+
+  <!-- Graphique 2 : répartition globale des accidents par type de manœuvre -->
+  <div class="graph-group">
+    <iframe src="graphs/accidents_par_manoeuvre.html" width="100%" height="600" style="border: none;"></iframe>
+
+    <div class="graph-comment">
+      <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Répartition des accidents par type de manœuvre</h3>
+
+      <h4>Introduction</h4>
+      <p>
+        Ce graphique circulaire met en évidence la répartition des accidents en fonction de cinq principales manœuvres effectuées par les véhicules impliqués. Il permet de mieux comprendre les comportements routiers les plus à risque et les situations de circulation à surveiller.
+      </p>
+
+      <h4>La majorité des accidents sans manœuvre spécifique</h4>
+      <p>
+        Le constat le plus frappant est que la majorité des accidents sont survenus <strong>sans manœuvre engagée</strong>. Cela indique que de nombreux accidents se produisent lors d’une conduite en ligne droite, probablement à cause d’une <strong>inattention</strong>, d’un <strong>défaut de vigilance</strong>, ou d’une <strong>distance de sécurité insuffisante</strong>.
+      </p>
+
+      <h4>Les changements de voie et les déplacements dans le même sens</h4>
+      <p>
+        Les accidents liés à un déplacement dans le <strong>même sens</strong> ou à un <strong>changement de file</strong> représentent également une part importante. Ces manœuvres peuvent entraîner des collisions latérales ou par l’arrière, souvent dues à un <strong>manque d’anticipation</strong> ou à une mauvaise évaluation des distances.
+      </p>
+
+      <h4>Tournants à gauche : une situation délicate</h4>
+      <p>
+        Les <strong>tournants à gauche</strong> apparaissent aussi comme une manœuvre accidentogène. Ce type de manœuvre impose souvent un croisement avec un flux opposé, ce qui accroît le risque de collisions frontales ou latérales. Le défaut de visibilité ou un mauvais jugement de la vitesse des véhicules venant en sens inverse peuvent en être la cause.
+      </p>
+
+      <h4>Autres manœuvres à surveiller</h4>
+      <p>
+        Bien que moins fréquents, les <strong>dépassements à gauche</strong> ou les <strong>arrêts non autorisés</strong> constituent également des comportements à risque. Ils interviennent souvent dans des environnements urbains denses ou sur des axes à forte vitesse, et peuvent entraîner des accidents graves.
+      </p>
+
+      <h4>Conclusion</h4>
+      <p>
+        Cette visualisation permet de <strong>hiérarchiser les situations routières les plus accidentogènes</strong>. Elle souligne l’importance de la <strong>vigilance constante</strong> même en l’absence de manœuvre, et permet aux autorités de cibler leurs <strong>campagnes de prévention</strong> sur les comportements les plus fréquents et les plus dangereux.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="graph-analysis-section">
+        <h2 class="analysis-group-title" style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #218c74; margin-bottom: 30px; border-left: 6px solid #218c74; padding-left: 18px;">Carte de France colorée par accidentologie</h2>
+      
+        <div class="graph-group">
+          <iframe src="graphs/carte_accidents_par_departement.html" width="100%" height="700" style="border: none;"></iframe>
+      
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Répartition départementale des accidents corporels</h3>
+      
+            <h4>Introduction</h4>
+            <p>
+              Cette carte interactive met en lumière les disparités géographiques en matière d’accidents corporels sur le territoire français. Elle propose une catégorisation en quatre niveaux — de « faible » à « très élevé » — en fonction du nombre d’accidents enregistrés par département sur la période <strong>2008 à 2021</strong>.
+            </p>
+      
+            <h4>Départements les plus touchés</h4>
+            <p>
+              Les zones urbaines densément peuplées présentent naturellement les niveaux d’accidentologie les plus élevés. Parmi les départements les plus concernés, on retrouve :
+            </p>
+            <ul>
+              <li><strong>Le Nord</strong></li>
+              <li><strong>Les Bouches-du-Rhône</strong></li>
+              <li><strong>Le Rhône</strong></li>
+              <li><strong>La Gironde</strong></li>
+            </ul>
+            <p>
+              Ces territoires cumulent souvent un trafic important, une forte densité de population et une complexité d’infrastructures propice aux accidents.
+            </p>
+      
+            <h4>Zones faiblement accidentogènes</h4>
+            <p>
+              À l’opposé, plusieurs départements ruraux enregistrent un nombre bien plus faible d’accidents, notamment :
+            </p>
+            <ul>
+              <li><strong>La Creuse</strong></li>
+              <li><strong>Le Cantal</strong></li>
+              <li><strong>La Lozère</strong></li>
+            </ul>
+            <p>
+              Ces zones, caractérisées par un trafic plus modéré et une densité de population moindre, présentent moins de situations de conflits routiers.
+            </p>
+      
+            <h4>Enjeux et pistes d’action</h4>
+            <p>
+              Cette carte permet d’identifier les <strong>territoires prioritaires</strong> pour les politiques publiques de sécurité routière. Elle fournit un support utile pour :
+            </p>
+            <ul>
+              <li>Orienter les campagnes de sensibilisation locales,</li>
+              <li>Planifier des aménagements spécifiques (ronds-points, feux intelligents, etc.),</li>
+              <li>Renforcer les dispositifs de contrôle dans les zones à risque.</li>
+            </ul>
+            <p>
+              Une lecture croisée avec les données de gravité ou d’infrastructure enrichirait davantage cette analyse territoriale.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <div class="graph-analysis-section">
+        <h2 class="analysis-group-title" style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #218c74; margin-bottom: 30px; border-left: 6px solid #218c74; padding-left: 18px;">Analyse des conditions environnementales</h2>
+      
+        <div class="graph-group">
+          <iframe src="graphs/accidents_lum_meteo.html" width="100%" height="600" style="border: none;"></iframe>
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Répartition des accidents selon la luminosité et les conditions météo</h3>
+      
+            <h4>Introduction</h4>
+            <p>
+              Ce graphique croise deux facteurs environnementaux majeurs dans l'accidentalité routière : la <strong>luminosité</strong> et les <strong>conditions météorologiques</strong>. Il met en évidence leur impact combiné sur la fréquence des accidents.
+            </p>
+      
+            <h4>Effet de la luminosité</h4>
+            <p>
+              Les <strong>accidents de jour</strong> sous un ciel dégagé représentent la majorité des cas. Cela s’explique par une plus forte densité de circulation en journée, notamment aux heures de pointe. Cependant, il est important de noter que les conditions de visibilité optimales n’éliminent pas le risque : elles sont souvent contrebalancées par une plus grande prise de risque ou de la distraction.
+            </p>
+            <p>
+              À l’inverse, la <strong>nuit avec éclairage public</strong> montre une proportion non négligeable d’accidents. Cela peut s’expliquer par une baisse de vigilance, une vitesse inadaptée à la visibilité réelle, ou une mauvaise perception des distances.
+            </p>
+      
+            <h4>Effet des conditions météorologiques</h4>
+            <p>
+              Les <strong>conditions normales</strong> concentrent logiquement le plus d’accidents car elles coïncident avec les périodes de circulation intense. Toutefois, les <strong>pluies légères</strong> ou le <strong>brouillard</strong> augmentent significativement le risque en réduisant l’adhérence et la visibilité. Le <strong>vent fort</strong>, bien que plus rare, est aussi un facteur aggravant, notamment pour les deux-roues ou les véhicules légers.
+            </p>
+      
+            <h4>Analyse croisée et interprétation</h4>
+            <p>
+              L’association « nuit + conditions météorologiques dégradées » constitue un <strong>facteur de risque majeur</strong>. Bien que ces situations soient moins fréquentes, leur dangerosité potentielle est élevée. Cela souligne l’importance de l’adaptation de la conduite aux conditions extérieures et de la sensibilisation des conducteurs à ces risques combinés.
+            </p>
+      
+            <h4>Conclusion</h4>
+            <p>
+              Ce graphique montre que la majorité des accidents se produisent dans des conditions apparemment favorables, ce qui plaide en faveur d’une vigilance constante, même de jour. Par ailleurs, les situations critiques (nuit, pluie, brouillard) doivent faire l’objet d’une <strong>attention particulière</strong> dans les politiques de prévention et dans la conception des infrastructures (éclairage, signalisation, revêtement).
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      <div class="graph-analysis-section">
+        <h2 class="analysis-group-title" style="font-family: 'Montserrat', sans-serif; font-size: 30px; color: #218c74; margin-bottom: 30px; border-left: 6px solid #218c74; padding-left: 18px;">Analyse des trajets les plus dangereux</h2>
+      
+        <div class="graph-group">
+          <iframe src="graphs/dangerosite_communes.html" width="100%" height="600" style="border: none;"></iframe>
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Score de dangerosité par commune</h3>
+            <h4>Introduction</h4>
+            <p>Ce graphique présente une analyse des 10 communes les plus dangereuses selon un <strong>score pondéré de dangerosité</strong>. Ce score ne se limite pas au nombre d’accidents, mais intègre également la gravité des conséquences (blessés, tués), ce qui permet une évaluation plus fine de l’impact humain.</p>
+            <h4>Poids des grandes agglomérations</h4>
+            <p>Sans surprise, plusieurs <strong>arrondissements de Paris</strong> dominent le classement : Paris-16e, Paris-12e, Paris-20e. Cela traduit une densité de circulation élevée, couplée à une complexité des infrastructures (carrefours, boulevards, interactions piétons/véhicules), qui augmente le risque d’accidents graves.</p>
+            <h4>Pertinence du score pondéré</h4>
+            <p>Contrairement à une simple comptabilisation brute, le score pondéré met en lumière les zones où les accidents ont un <strong>impact humain significatif</strong>. Une commune avec peu d’accidents mais une gravité forte (ex : plusieurs décès) pourra ainsi apparaître dans ce classement, ce qui permet une <strong>vision plus stratégique des priorités d’intervention</strong>.</p>
+            <h4>Conclusion</h4>
+            <p>Cette visualisation permet d’identifier des <strong>zones sensibles à fort enjeu humain</strong>, nécessitant des actions ciblées : sécurisation des traversées piétonnes, limitation de vitesse, campagnes de prévention locales, voire réaménagements urbains. Elle constitue un outil précieux pour orienter les décisions en matière de <strong>politique de sécurité routière</strong> au niveau communal.</p>
+          </div>
+        </div>
+      
+        <div class="graph-group">
+          <iframe src="graphs/accidents_communes.html" width="100%" height="600" style="border: none;"></iframe>
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Communes les plus accidentogènes</h3>
+            <h4>Introduction</h4>
+            <p>Ce graphique représente les dix communes ayant enregistré le plus grand nombre d’accidents corporels sur la période 2008–2021. Contrairement au score pondéré, cette visualisation ne prend pas en compte la gravité des accidents mais uniquement leur fréquence brute.</p>
+            <h4>Lecture du graphique</h4>
+            <p>En tête du classement figurent des zones urbaines denses et fortement circulées comme <strong>Paris-16e</strong>, <strong>Nice</strong>, ou encore <strong>Rennes</strong>. Ces résultats ne sont pas surprenants car les grandes villes cumulent plusieurs facteurs de risque :</p>
+            <ul>
+              <li>Un trafic intense et continu,</li>
+              <li>Une concentration de piétons, vélos, deux-roues et automobilistes,</li>
+              <li>Des infrastructures complexes (carrefours, feux, croisements multiples).</li>
+            </ul>
+            <h4>Analyse comparative</h4>
+            <p>Cette approche permet d’identifier les <strong>zones à forte circulation</strong> où le risque d’accident est élevé, même si tous ne sont pas graves. Cela complète utilement l’analyse pondérée, en mettant en avant les zones à flux critiques.</p>
+            <h4>Conclusion</h4>
+            <p>La fréquence élevée d’accidents dans certaines communes peut orienter les politiques d’aménagement urbain et les dispositifs de prévention. Les zones les plus touchées pourraient faire l’objet d’<strong>investissements ciblés</strong> : sécurisation des carrefours, fluidification du trafic, limitation de vitesse ou zones partagées plus lisibles.</p>
+          </div>
+        </div>
+      
+        <div class="graph-group">
+          <iframe src="graphs/evolution_dangerosite.html" width="100%" height="600" style="border: none;"></iframe>
+          <div class="graph-comment">
+            <h3 style="font-size: 24px; color: #2c3e50;">Analyse détaillée : Évolution du score de dangerosité</h3>
+            <h4>Contexte et objectif</h4>
+            <p>Ce graphique retrace l'évolution du <strong>score de dangerosité annuel</strong> calculé à partir de la gravité des accidents corporels (pondération selon le nombre de tués, blessés, indemnes). L’objectif est de suivre les tendances et de repérer d’éventuelles fluctuations significatives dans le temps.</p>
+            <h4>Tendance générale : une stabilité relative</h4>
+            <p>De <strong>2012 à 2016</strong>, on observe une période de relative stabilité avec un score compris entre <strong>1200 et 1300</strong>. Cette constance peut s’expliquer par des politiques de sécurité routière déjà bien en place ou une stagnation des comportements à risque sur la période.</p>
+            <h4>2017 : une année de rupture</h4>
+            <p>L’année <strong>2017 marque une hausse notable</strong> avec un pic au-delà de 1800 points. Plusieurs hypothèses peuvent être formulées :</p>
+            <ul>
+              <li>Une <strong>hausse réelle de la gravité des accidents</strong>, liée à un relâchement des comportements ou à un contexte particulier (météo, mobilité accrue...)</li>
+              <li>Une <strong>modification des pratiques de déclaration</strong> ou de codification des accidents</li>
+            </ul>
+            <h4>2018 : une chute brutale</h4>
+            <p>En <strong>2018</strong>, on observe une <strong>baisse spectaculaire</strong> du score, ce qui soulève des questions sur :</p>
+            <ul>
+              <li>La <strong>qualité ou la complétude des données</strong> (ex. : données manquantes)</li>
+              <li>Un changement dans la <strong>méthodologie de saisie</strong> par les services concernés</li>
+              <li>Un effet potentiel de <strong>nouvelles mesures de sécurité</strong> mises en œuvre cette année-là</li>
+            </ul>
+            <h4>Conclusion</h4>
+            <p>Ce graphique attire l’attention sur les variations interannuelles et l’importance d’une analyse critique des données. Si certains écarts peuvent refléter des évolutions réelles, d’autres pourraient être liés à des biais techniques ou administratifs. Il est donc essentiel de croiser ces résultats avec d’autres indicateurs (mortalité, nombre d'accidents, politique de prévention) pour affiner l’interprétation.</p>
+          </div>
+        </div>
+      </div>
+
+  <footer>
+    © 2025 Projet Data Viz | Tous droits réservés
+  </footer>
+
+</body>
+</html>

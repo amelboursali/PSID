@@ -1,26 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Moderne</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Barre de navigation -->
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showSection('accueil')">🏠 Accueil</a></li>
-            <li><a href="#" onclick="showSection('machinelearning')">🤖 Machine Learning</a></li>
-            <li><a href="#" onclick="showSection('graphe')">📊 Graphe</a></li>
-        </ul>
-    </nav>
 
-    <!-- Contenu dynamique -->
-    <section id="content">
-        <h1>Bienvenue sur mon site !</h1>
-        <p>Cliquez sur un menu pour voir le contenu.</p>
+  <header>
+    <h1>Accueil</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="ml-model.html">Modèle ML</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <section class="graph">
+      <h2 class="intro-title">Bienvenue</h2>
+      <p class="intro-text">
+        Bienvenue sur notre plateforme dédiée à l’analyse des <strong>accidents corporels de la circulation</strong> en France. 
+        Grâce à un traitement rigoureux des données ouvertes, nous mettons en lumière les dynamiques et les tendances liées aux incidents routiers. 
+        Notre objectif : proposer des outils visuels et des modèles prédictifs permettant une meilleure compréhension des risques et une aide à la décision.
+      </p>
     </section>
+
+    <section class="graph">
+      <h2 class="intro-title">Contexte</h2>
+      <p class="intro-text">
+        Chaque année, les accidents corporels de la circulation causent des milliers de blessés et de décès. 
+        Comprendre les circonstances dans lesquelles ces accidents surviennent est essentiel pour mettre en place des mesures de prévention efficaces.
+        Les données issues des services de l’État offrent une source précieuse pour identifier les causes, les lieux et les périodes à risques.
+      </p>
+      <p class="intro-text">
+        Ce projet s’inscrit dans une démarche d’analyse exploratoire des données et de modélisation prédictive, en lien direct avec les enjeux de sécurité routière.
+      </p>
+    </section>
+
+    <section class="graph">
+      <h2 class="intro-title">Objectifs</h2>
+      <p class="intro-text">
+        Nous avons défini quatre objectifs clés afin de guider notre travail :
+      </p>
+      <ul class="intro-text">
+        <li><strong>Qualité des données :</strong> Nettoyer et structurer les jeux de données pour garantir leur fiabilité.</li>
+        <li><strong>Analyse des facteurs :</strong> Étudier l’impact des conditions météo, de la luminosité, du type de véhicule ou de la manœuvre effectuée.</li>
+        <li><strong>Prédiction :</strong> Identifier les situations à haut risque à l’aide de modèles de Machine Learning.</li>
+        <li><strong>Prévention :</strong> Fournir des indicateurs clairs pour orienter les actions de sécurité publique.</li>
+      </ul>
+    </section>
+
+    <section class="graph">
+      <h2 class="intro-title">Notre démarche</h2>
+      <p class="intro-text">
+        Pour répondre aux objectifs définis, nous avons mis en place une méthodologie en plusieurs étapes :
+      </p>
+      <ol class="intro-text">
+        <li><strong>Exploration initiale :</strong> étude statistique des données et premières visualisations.</li>
+        <li><strong>Pré-traitement :</strong> nettoyage, normalisation et enrichissement des variables clés.</li>
+        <li><strong>Analyse visuelle :</strong> réalisation de dashboards interactifs avec Plotly et HTML/CSS.</li>
+        <li><strong>Modélisation :</strong> entraînement d’un modèle de classification pour prédire la gravité d’un accident selon plusieurs paramètres.</li>
+      </ol>
+      <p class="intro-text">
+        L’ensemble des étapes a été réalisé en Python, en s’appuyant sur des bibliothèques telles que Pandas, Scikit-learn, Seaborn et Plotly.
+      </p>
+    </section>
+
+    <section class="graph">
+      <h2 class="intro-title">Données utilisées</h2>
+      <p class="intro-text">
+        Les données utilisées proviennent de <a href="https://public.opendatasoft.com/explore/dataset/accidents-corporels-de-la-circulation-millesime/export/?flg=fr-fr" target="_blank">OpenDataSoft</a>
+        et couvrent la période de 2008 à 2021. Elles contiennent plus de 800 000 enregistrements décrivant les accidents corporels survenus en France.
+      </p>
+      <ul class="intro-text">
+        <li><strong>Localisation :</strong> adresse, commune, département</li>
+        <li><strong>Date & heure :</strong> horodatage précis de l’accident</li>
+        <li><strong>Facteurs environnementaux :</strong> météo, luminosité, type de route</li>
+        <li><strong>Gravité :</strong> blessés légers, graves, tués, indemnes</li>
+        <li><strong>Véhicules & manœuvres :</strong> type de véhicule, action effectuée</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025 Projet PSID | Tous droits réservés
+  </footer>
+
 </body>
 </html>
