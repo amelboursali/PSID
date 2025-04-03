@@ -75,7 +75,6 @@ nav ul li a:hover {
   padding: 0 20px;
 }
 
-
 .intro {
   background: white;
   padding: 30px;
@@ -91,7 +90,6 @@ nav ul li a:hover {
   color: #218c74;
   margin-bottom: 20px;
   text-align: center;
-  
 }
 
 .intro-text {
@@ -99,6 +97,20 @@ nav ul li a:hover {
   margin-bottom: 15px;
   color: #333;
   text-align: justify;
+}
+
+/* Bloc "analyse groupée" */
+.analysis-group-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #218c74;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  border-left: 6px solid #218c74;
+  background: #f3fdfb;
+  padding: 10px 15px;
+  border-radius: 12px;
 }
 
 /* Graph sections */
@@ -122,3 +134,106 @@ footer {
   max-width: 1100px;
   margin: 60px auto 20px;
 }
+
+/* Bloc d’interprétation */
+.graph.interpretation {
+  background: #fdfdfd;
+  border: 1px solid #e2e2e2;
+  padding: 25px;
+  margin-top: -30px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.graph-comment h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #218c74;
+  margin-bottom: 20px;
+  border-left: 5px solid #218c74;
+  padding-left: 12px;
+  background-color: #f3fdfb;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.graph-comment h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ddd;
+  padding-left: 12px;
+}
+
+.graph-comment p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.graph-comment ul {
+  margin-top: 5px;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+/* Groupe graphique + interprétation */
+.graph-group {
+    background-color: #ffffff; /* Fond du bloc */
+    border: 2px solid #d1dce5; /* Bordure claire */
+    border-radius: 25px;       /* Coins arrondis */
+    padding: 25px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* Ombre légère */
+  }
+  
+
+.graph-group .graph-comment {
+  padding-top: 20px;
+}
+
+.graph-group .graph-comment p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.graph-comment {
+    margin-top: 20px;
+  }
+  
+  .graph-comment h3 {
+    font-size: 24px;
+    color: #2c3e50;
+  }
+  
+  .graph-comment h4 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-top: 20px;
+  }
+  
+  .graph-comment p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .graph-group iframe {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .graph-analysis-section {
+    background: #ffffff;
+    border: 3px solid #218c74;
+    border-radius: 30px;
+    padding: 40px 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+  
