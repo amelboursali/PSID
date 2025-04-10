@@ -73,3 +73,40 @@ df = df[cols]
 
 # Sauvegarde du fichier final
 df.to_csv("DATA_accidents_pour_ml.csv", index=False, sep=';', encoding='utf-8-sig')
+
+####################pieton Nettoyage############################
+# Chargement du fichier
+df = pd.read_csv("DATA_accidents_pour_ml.csv", sep=';', low_memory=False)
+
+def extraire_gravite_pieton(row):
+    try:
+        usagers = str(row["Catégorie d'usager"]).split(',')
+        gravites = str(row["Gravité"]).split(',')
+
+        for i, usager in enumerate(usagers):
+            if usager.strip().lower() == 'piéton':
+                # Vérifie que l’index existe dans gravites
+                if i < len(gravites):
+                    return gravites[i].strip()
+        return 0  # Aucun piéton
+    except Exception as e:
+        return 0  # Problème dans la ligne
+
+# Application de la fonction
+df['gravité_pieton'] = df.apply(extraire_gravite_pieton, axis=1)
+
+# Sauvegarde du fichier en UTF-8 avec BOM pour Excel (accents préservés)
+df.to_csv("dataset_avec_gravite_pieton.csv", index=False, sep=';', encoding='utf-8-sig')
+
+print("✅ Colonne 'gravité_pieton' ajoutée avec succès (accents compatibles Excel).")
+
+# Compter les lignes avec au moins un piéton
+nb_lignes_avec_pieton = df["Catégorie d'usager"].str.lower().str.contains("piéton").sum()
+
+# Compter les lignes où gravité_pieton est différente de 0
+nb_lignes_gravite_pieton_valide = df[df['gravité_pieton'] != 0].shape[0]
+
+# Affichage des stats
+print(f"✅ Colonne 'gravité_pieton' ajoutée avec succès.")
+print(f"➡️  Nombre de lignes avec au moins un piéton : {nb_lignes_avec_pieton}")
+print(f"➡️  Nombre de lignes où gravité_pieton ≠ 0   : {nb_lignes_gravite_pieton_valide}")
