@@ -8,7 +8,7 @@ def corriger_accents_foireux(texte):
         return texte
 
 # Étape 1 : lire les données avec encodage ISO-8859-1
-df = pd.read_csv("dataset_avec_gravite_pieton.csv", sep=';', encoding='ISO-8859-1')
+df = pd.read_csv("DATA_accidents_pour_ml.csv", sep=';', encoding='ISO-8859-1')
 
 # Étape 2 : corriger les noms de colonnes
 df.columns = [corriger_accents_foireux(col) for col in df.columns]
@@ -35,6 +35,6 @@ cols.insert(index_jour + 1, cols.pop(cols.index("Jour_semaine")))
 df = df[cols]
 
 # Étape 7 : sauvegarde avec encodage compatible Excel
-df.to_csv("dataset_modifie_avec_jour_semaine.csv", sep=';', index=False, encoding='utf-8-sig')
+df.to_csv("DATA_accidents_pour_ml.csv", sep=';', index=False, encoding='utf-8-sig')
 
 print("✅ Fichier prêt : accents OK partout, 'Jour_semaine' ajouté, compatible Excel.")

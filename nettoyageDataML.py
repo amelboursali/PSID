@@ -96,7 +96,7 @@ def extraire_gravite_pieton(row):
 df['gravité_pieton'] = df.apply(extraire_gravite_pieton, axis=1)
 
 # Sauvegarde du fichier en UTF-8 avec BOM pour Excel (accents préservés)
-df.to_csv("dataset_avec_gravite_pieton.csv", index=False, sep=';', encoding='utf-8-sig')
+df.to_csv("DATA_accidents_pour_ml.csv", index=False, sep=';', encoding='utf-8-sig')
 
 print("✅ Colonne 'gravité_pieton' ajoutée avec succès (accents compatibles Excel).")
 
