@@ -24,3 +24,34 @@ async function fetchMessage(section) {
 function showSection(section) {
     fetchMessage(section);
 }
+
+document.getElementById("prediction-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    
+    const data = {
+        sexe_pieton: document.getElementById("sexe_pieton").value,
+        departement: document.getElementById("departement").value,
+        meteo: document.getElementById("meteo").value,
+        jour_semaine: document.getElementById("jour_semaine").value,
+        lumiere: document.getElementById("lumiere").value
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/api/predict/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        document.getElementById("prediction").innerHTML = `Indemne: ${Math.round(result.proba_indemne * 100)}%<br>
+                                                            Blessé: ${Math.round(result.proba_blesse * 100)}%<br>
+                                                            Tué: ${Math.round(result.proba_tue * 100)}%`;
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
