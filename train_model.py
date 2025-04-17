@@ -11,9 +11,16 @@ df = pd.read_csv("DATA_accidents_pour_ml.csv", sep=";")
 df = df[["sexe_pieton", "Département", "Conditions atmosphériques", "Jour_semaine", "Lumière", "gravité_pieton"]]
 df.dropna(inplace=True)
 
-# 3. Encoder les colonnes catégorielles
-for col in ["sexe_pieton", "Conditions atmosphériques", "Jour_semaine", "Lumière", "gravité_pieton"]:
+# 3. Encoder les colonnes catégorielles, sauf la target pour garder le mapping
+label_mapping = {}
+for col in ["sexe_pieton", "Conditions atmosphériques", "Jour_semaine", "Lumière"]:
     df[col] = df[col].astype(str).factorize()[0]
+
+# Encoder la target avec mapping explicite
+df["gravité_pieton"] = df["gravité_pieton"].astype(str)
+y_labels, uniques = pd.factorize(df["gravité_pieton"])
+df["gravité_pieton"] = y_labels
+label_mapping = dict(enumerate(uniques))  # ex: {0: 'Indemne', 1: 'Blessé', 2: 'Tué'}
 
 # 4. Séparer les features et la target
 X = df[["sexe_pieton", "Département", "Conditions atmosphériques", "Jour_semaine", "Lumière"]]
@@ -22,16 +29,19 @@ y = df["gravité_pieton"]
 # 5. Split train/test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# 6. Entraînement du modèle avec pondération automatique
+# 6. Entraînement du modèle avec class_weight équilibré
 model = RandomForestClassifier(n_estimators=100, class_weight='balanced', random_state=42)
 model.fit(X_train, y_train)
 
 # 7. Évaluation
 y_pred = model.predict(X_test)
 
+# Récupérer les noms de classes dans l’ordre
+target_names = [label_mapping[i] for i in sorted(label_mapping.keys())]
+
 print("✅ Évaluation du modèle avec class_weight='balanced' :\n")
 print("Accuracy :", accuracy_score(y_test, y_pred))
-print("\nClassification Report :\n", classification_report(y_test, y_pred))
+print("\nClassification Report :\n", classification_report(y_test, y_pred, target_names=target_names))
 print("Matrice de confusion :\n", confusion_matrix(y_test, y_pred))
 
 # 8. Sauvegarde du modèle
