@@ -11,8 +11,7 @@ df = pd.read_csv("DATA_accidents_pour_ml.csv", sep=";")
 df = df[["sexe_pieton", "Département", "Conditions atmosphériques", "Jour_semaine", "Lumière", "gravité_pieton"]]
 df.dropna(inplace=True)
 
-# 3. Encoder les colonnes catégorielles, sauf la target pour garder le mapping
-label_mapping = {}
+# 3. Encoder les colonnes catégorielles (sauf la cible pour garder les labels)
 for col in ["sexe_pieton", "Conditions atmosphériques", "Jour_semaine", "Lumière"]:
     df[col] = df[col].astype(str).factorize()[0]
 
@@ -20,7 +19,12 @@ for col in ["sexe_pieton", "Conditions atmosphériques", "Jour_semaine", "Lumiè
 df["gravité_pieton"] = df["gravité_pieton"].astype(str)
 y_labels, uniques = pd.factorize(df["gravité_pieton"])
 df["gravité_pieton"] = y_labels
-label_mapping = dict(enumerate(uniques))  # ex: {0: 'Indemne', 1: 'Blessé', 2: 'Tué'}
+label_mapping = dict(enumerate(uniques))
+
+# Affichage du mapping des classes
+print("🎯 Mapping des classes gravité_pieton :")
+for i, label in label_mapping.items():
+    print(f"Classe {i} ➜ {label}")
 
 # 4. Séparer les features et la target
 X = df[["sexe_pieton", "Département", "Conditions atmosphériques", "Jour_semaine", "Lumière"]]
@@ -39,7 +43,7 @@ y_pred = model.predict(X_test)
 # Récupérer les noms de classes dans l’ordre
 target_names = [label_mapping[i] for i in sorted(label_mapping.keys())]
 
-print("✅ Évaluation du modèle avec class_weight='balanced' :\n")
+print("\n✅ Évaluation du modèle avec class_weight='balanced' :\n")
 print("Accuracy :", accuracy_score(y_test, y_pred))
 print("\nClassification Report :\n", classification_report(y_test, y_pred, target_names=target_names))
 print("Matrice de confusion :\n", confusion_matrix(y_test, y_pred))
